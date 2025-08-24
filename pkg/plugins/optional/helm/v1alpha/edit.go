@@ -96,8 +96,7 @@ func (p *editSubcommand) PostScaffold() error {
 	if hasWebhooks {
 		workflowFile := filepath.Join(".github", "workflows", "test-chart.yml")
 		if _, err := os.Stat(workflowFile); err == nil {
-			target := `## TODO: Uncomment if cert-manager is enabled
-#      - name: Install cert-manager via Helm
+			target := `#      - name: Install cert-manager via Helm
 #        run: |
 #          helm repo add jetstack https://charts.jetstack.io
 #          helm repo update
